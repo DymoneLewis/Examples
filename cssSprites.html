@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="width:11%;margin:10% auto;">
+    <h3>A CSS Sprite Example</h3><hr><br>
+    <label>X:
+        <input id="x_position" type="number" placeholder="Enter the x position"
+               style="height:30px;margin-left:10px;"/>
+    </label><br><br>
+    <label>Y:
+        <input id="y_position" type="number" placeholder="Enter the y position"
+               style="height:30px;margin-left:10px;"/>
+    </label><br><br>
+
+    <button type="button" style="height:40px; width:200px;
+        background-color: black;color: white;border:1px solid white;">Submit</button>
+    <div id="bg" style="background-image:url('./Examples/markdown.png');
+        background-repeat: no-repeat;"></div>
+</div>
+
+</body>
+<script>
+    let x = document.getElementById('x_position');
+    let y = document.getElementById('y_position');
+    let btn = document.getElementsByTagName('button')[0];
+    let bg = document.getElementById('bg');
+    console.log(x,y,btn,bg);
+    btn.onclick = function(){
+        console.log(x.value);
+        console.log(y.value);
+        bg.style['background-position-x'] = x.value + "px";
+        bg.style['background-position-y'] = y.value + "px";
+    }
+</script>
+</html>
